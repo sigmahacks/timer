@@ -1,0 +1,178 @@
+
+
+
+@import "https://cdn.rawgit.com/yeun/open-color/master/open-color.css";
+@import url("https://rsms.me/inter/inter-ui.css");
+:root {
+  --easing: cubic-bezier(.5,0,.5,1);
+}
+
+.confetti {
+  padding: 0 0;
+
+  border-radius: 4px;
+  font-size: 4rem;
+  line-height: 2rem;
+  transition: all 250ms var(--easing);
+  cursor: pointer;
+}
+
+
+
+
+
+.flip-container {
+    perspective: 1000px;
+}
+
+.flip-container:hover {
+    cursor: pointer;
+}
+
+.flip-container, .front, .back {
+    width: 100%;
+    height: 150px;
+}
+
+/* flip speed goes here */
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+    background: url(../images/wood.png) no-repeat center center/contain;
+    background-size: 100% 100%;
+}
+
+/* back, initially hidden pane */
+.back {
+    transform: rotateY(180deg);
+    background: url(../images/wood-flip.png) no-repeat center center/contain;
+    background-size: 100% 100%;
+}
+
+ .flip-container.hover .flipper, .flip-container.flip .flipper {
+    transform: rotateY(180deg);
+}
+
+
+
+
+
+.bounce {
+    float: right;
+    text-align: left;
+    width: 25%;
+    display: inline-block;
+    -webkit-animation: bounce 2s linear 0s 1 forwards;
+    -ms-animation: bounce 2s linear 0s 1 forwards;
+    animation: bounce 2s linear 0s 1 forwards;
+ }
+
+@-ms-keyframes bounce {
+     0% {-ms-transform: translateX(110%);}
+    20%, 30%, 40%, 100% {-ms-transform: translateX(0);}
+    25% {-ms-transform: translateX(20px);}
+     35% {-ms-transform: translateX(10px);}
+ }
+
+ @-webkit-keyframes bounce {
+     0% {-webkit-transform: translateX(110%);}
+    20%, 30%, 40%, 100% {-webkit-transform: translateX(0);}
+    25% {-webkit-transform: translateX(20px);}
+     35% {-webkit-transform: translateX(10px);}
+ }
+
+ @keyframes bounce {
+     0% {transform: translateX(110%);}
+    20%, 30%, 40%, 100% {transform: translateX(0);}
+    25% {transform: translateX(20px);}
+     35% {transform: translateX(10px);}
+ }
+
+
+
+
+.rw-wrapper{
+    text-align: center;
+	position: relative;
+}
+
+.rw-words{
+	display: inline;
+    font-size: 3vw;
+    /*text-indent: 20px;
+*/}
+
+
+.rw-words-1 > span{
+    padding-top: 10px;
+    width: 100%;
+	left: 0;
+    text-align: center;
+	position: absolute;
+	opacity: 0;
+	-webkit-animation: rotateWord 10.5s linear infinite 0s;
+	-ms-animation: rotateWord 10.5s linear infinite 0s;
+	animation: rotateWord 10.5s linear infinite 0s;
+}
+
+
+
+.rw-words-1 span:nth-child(2) {
+    -webkit-animation-delay: 3.5s;
+	-ms-animation-delay: 3.5s;
+	animation-delay: 3.5s;
+}
+.rw-words-1 span:nth-child(3) {
+    -webkit-animation-delay: 7s;
+	-ms-animation-delay: 7s;
+	animation-delay: 7s;
+}
+
+
+@-webkit-keyframes rotateWord {
+    0% { opacity: 0; }
+    1% { opacity: 0; -webkit-transform: translateY(-30px); }
+	3% { opacity: 1; -webkit-transform: translateY(0px);}
+    22% { opacity: 1; -webkit-transform: translateY(0px); }
+	25% { opacity: 0; -webkit-transform: translateY(30px); }
+	80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@-ms-keyframes rotateWord {
+    0% { opacity: 0; }
+    1% { opacity: 0; -ms-transform: translateY(-30px); }
+	3% { opacity: 1; -ms-transform: translateY(0px);}
+    22% { opacity: 1; -ms-transform: translateY(0px); }
+	25% { opacity: 0; -ms-transform: translateY(30px); }
+	80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@keyframes rotateWord {
+    0% { opacity: 0; }
+    1% { opacity: 0; -webkit-transform: translateY(-30px); transform: translateY(-30px); }
+	3% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px);}
+    22% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px); }
+	25% { opacity: 0; -webkit-transform: translateY(30px); transform: translateY(30px); }
+	80% { opacity: 0; }
+    100% { opacity: 0; }
+}

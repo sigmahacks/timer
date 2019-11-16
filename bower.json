@@ -1,0 +1,27 @@
+{
+  "name": "Tinovation website",
+  "version": "1.0.0",
+  "authors": [
+    "Sreehari Ram Mohan"
+  ],
+  "description": "2018 Pioneer Hacks Event Website",
+  "main": "index.html",
+  "keywords": [
+    "Hackathon"
+  ],
+  "license": "GNU GENERAL PUBLIC LICENSE Version 3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "ionicons": "~2.0.1",
+    "isotope": "~2.2.1",
+    "smooth-scroll": "~7.0.0"
+  }
+}

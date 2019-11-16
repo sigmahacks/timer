@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule of SigmaHacks I</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <style>
+
+        div {
+            font-family: 'Raleway';
+            src: url('../Raleway') format('truetype');
+        }
+
+        #screen {
+            background-color: #61cec9;
+        }
+
+        #scheduleNow {
+            font-size: 9vw;
+        }
+
+        #scheduleNext {
+            font-size: 2.7vw;
+        }
+
+        #timeDisplay {
+            font-size: 3.3vw;
+        }
+
+        #link {
+            color: rgba(0, 0, 0, 0.48);
+            font-size: 20px;
+        }
+
+        #link:hover {
+            color:black;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div style="width:100vw; height:100vh;" id="screen">
+        <div class="container" style="position:relative; top: 50%; transform:translate(0, -50%);">
+            <h1 style="font-size: 2rem;" class="text">Schedule</h1><br><br>
+            <div id="scheduleNow" style="position:relative; line-height:65%; margin-bottom:100px;">
+                <span style="font-size: 1.3rem; display:block;">Currently...</span>
+                <span id="curSchedule"></span>
+            </div>
+
+            <div id="timeDisplay" style="line-height:80%;"></div>
+            <br>
+            <div id="scheduleNext">
+                
+            </div>
+            <br>
+            <a href="timer.html" id="link">Timer</a>
+        </div>
+    </div>
+
+    <script>
+
+        function getTime() {
+
+            // Get todays date and time
+            var date = new Date();
+
+            var seconds = date.getSeconds();
+            var minutes = date.getMinutes();
+            var hour = date.getHours();
+            return {
+                hr: hour,
+                min: minutes,
+                sec: seconds
+            };
+        }
+
+        function update() {
+            var time = getTime();
+            // time.hr -=12;
+            document.getElementById("timeDisplay").innerHTML = "<span style='font-size:1rem'>Time&ensp;</span><br>" + time.hr + " : "
+                + ((time.min<10)?"0"+time.min:time.min) + " : " + ((time.sec<10)?"0"+time.sec:time.sec) + "";
+
+            if (time.hr >= 10 && time.min >= 40 && time.hr <= 12 && time.min <= 45) {
+                document.getElementById("curSchedule").innerHTML = "Brainstorming an Idea Workshop";
+                document.getElementById("scheduleNow").style.fontSize = "5vw";
+                document.getElementById("scheduleNext").innerHTML =
+                    "Lunch @ 12:45 PM";
+            } else if (time.hr >= 12 && time.min >= 45 && time.hr<= 13 && time.min <=59) {
+                document.getElementById("curSchedule").innerHTML = "Lunch";
+                document.getElementById("scheduleNow").style.fontSize = "6vw";
+                document.getElementById("scheduleNext").innerHTML =
+                    "App Development Workshop @ 2:00 PM";
+            } else if (time.hr >= 14 && time.min >= 00 && time.hr<= 16 && time.min <=59) {
+                document.getElementById("curSchedule").innerHTML = "App Development Workshop";
+                document.getElementById("scheduleNow").style.fontSize = "5vw";
+                document.getElementById("scheduleNext").innerHTML =
+                    "Boba @ 5:00 PM";
+            } else if (time.hr >= 17 && time.hr<= 17 && time.min <=59) {
+                document.getElementById("curSchedule").innerHTML = "Boba";
+                document.getElementById("scheduleNow").style.fontSize = "7vw";
+                document.getElementById("scheduleNext").innerHTML =
+                    "Machine Learning Workshop @ 6:00 PM";
+            } else if (time.hr >= 18 && time.hr<= 19 && time.min <=45) {
+                document.getElementById("curSchedule").innerHTML = "Machine Learning Workshop";
+                document.getElementById("scheduleNow").style.fontSize = "5vw";
+                document.getElementById("scheduleNext").innerHTML =
+                    "Dinner @ 7:45 PM";
+            } else if (time.hr >= 19 && time.min >= 45 && time.hr<= 21) {
+                document.getElementById("curSchedule").innerHTML = "Dinner";
+                document.getElementById("scheduleNow").style.fontSize = "6vw";
+                document.getElementById("scheduleNext").innerHTML =
+                    "Building a STEM Career Workshop @ 7:00 AM";
+            } else if (time.hr >= 7 && time.min >= 00 && time.hr<= 7 && time.min <=59) {
+                document.getElementById("curSchedule").innerHTML = "Building a STEM Career Workshop";
+                document.getElementById("scheduleNow").style.fontSize = "5vw";
+                document.getElementById("scheduleNext").innerHTML =
+                    "Breakfast @ 8:00 AM";
+            } else if (time.hr >= 8 && time.min >= 00 && time.hr<= 8 && time.min <=59) {
+                document.getElementById("curSchedule").innerHTML = "Breakfast";
+                document.getElementById("scheduleNow").style.fontSize = "6vw";
+                document.getElementById("scheduleNext").innerHTML =
+                    "Project Submissions @ 9:00 AM";
+            } 
+        }
+
+        setInterval(update, 1000);
+
+        console.log(getTime().hr);
+
+
+
+
+
+    </script>
+</body>
+</html>
