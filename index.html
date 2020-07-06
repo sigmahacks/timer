@@ -58,14 +58,10 @@
   <!-- Display the countdown timer in an element -->
     <div style="width:100vw; height:100vh;" id="screen">
         <div class="container" style="position:relative; top: 40%; transform:translate(0, -50%); ">
-            <h1 style="font-size: 2rem;" class="text">Time until submission</h1>
-            <h1 id="demo" class="text"></h1>     
-            <div class="text" style="padding-top: 10vh;">
-                Color&ensp;<input class="jscolor {onFineChange:'update(this)'}" value="61cec9" id="color picker" style="padding-left:5px;">
-                <br><br>
-                <label>Fade&ensp;<input type="checkbox" id="fadebox" style="height:20px; width:20px;"/></label>
-                <br><br>
-                <a href="schedule.html" id="link" class="text">Schedule</a>
+            <h1 style="padding-top: 2vh; padding-bottom: 1vh; font-size: 3rem; color: #f5f5ee" class="text">time until submission:</h1>
+            <h1 style="padding-bottom: -1vh; padding-top: -1vh; font-size: 4.5rem; color: #efc045" id="demo" class="text"></h1>     
+            <div class="text" style="padding-top: -2vh; padding-bottom: -2vh">
+                <!-- <a style="font-size: 3rem; color: #f5f5ee" href="schedule.html" id="link" class="text">upcoming events →</a> -->
             </div>
         </div>
             
@@ -106,11 +102,11 @@
         }
     }
     
-    document.getElementById('screen').style.backgroundColor = '#61cec9';
+    document.getElementById('screen').style.backgroundColor = '#81a969';
 
     
 // Set the date we're counting down to
-var countDownDate = new Date("Nov 17, 2019 9:00:00").getTime();
+var countDownDate = new Date("2020-07-25T21:00:00-08:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -131,10 +127,14 @@ var x = setInterval(function() {
   document.getElementById("demo").innerHTML = hours+days*24 + " : "
   + ((minutes<10)?"0"+minutes:minutes) + " : " + ((seconds<10)?"0"+seconds:seconds) + "";
 
+  if (distance > 86400000) {
+      document.getElementById("demo").innerHTML = "hacking has not begun..."
+  }
+
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+    document.getElementById("demo").innerHTML = "submissions closed!";
   }
 }, 1000);
     
@@ -145,7 +145,7 @@ var x = setInterval(function() {
     const randomColor = () => '#' + Math.random().toString(16).substr(-6)
     const changeColor = () => {
         var color = randomColor();
-        document.getElementById("screen").style.backgroundColor = color;
+        document.getElementById("screen").style.backgroundColor = "color";
         color.replace('#', '');
         changeTextColor(color);
         document.getElementById("fadebox").value = color;

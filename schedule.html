@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Schedule of SigmaHacks I</title>
+    <title>Upcoming Events</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -19,15 +19,15 @@
         }
 
         #screen {
-            background-color: #61cec9;
+            background-color: #81a969;
         }
 
         #scheduleNow {
-            font-size: 9vw;
+            font-size: 4.5vh;
         }
 
         #scheduleNext {
-            font-size: 2.7vw;
+            font-size: 3vh;
         }
 
         #timeDisplay {
@@ -49,10 +49,10 @@
 
     <div style="width:100vw; height:100vh;" id="screen">
         <div class="container" style="position:relative; top: 50%; transform:translate(0, -50%);">
-            <h1 style="font-size: 2rem;" class="text">Schedule</h1><br><br>
-            <div id="scheduleNow" style="position:relative; line-height:65%; margin-bottom:100px;">
-                <span style="font-size: 1.3rem; display:block;">Currently...</span>
-                <span id="curSchedule"></span>
+            <h1 style="color: #f5f5ee; font-size: 4.5vh;" class="text">upcoming events:</h1><br><br>
+            <div id="scheduleNow" style="position:relative; line-height:65%; margin-bottom:0.75vh; margin-top:-4vh">
+                <span style="color: #383938; font-size: 3vh; display:block;">currently...</span>
+                <span style="color: #efc045; font-size: 8.75vh; display:block; margin-left: -0.5vh;" id="curSchedule"></span>
             </div>
 
             <div id="timeDisplay" style="line-height:80%;"></div>
@@ -61,7 +61,7 @@
                 
             </div>
             <br>
-            <a href="index.html" id="link">Timer</a>
+            <a href="index.html" id="link">time until submission →</a>
         </div>
     </div>
 
@@ -85,8 +85,8 @@
         function update() {
             var time = getTime();
             // time.hr -=12;
-            document.getElementById("timeDisplay").innerHTML = "<span style='font-size:1rem'>Time&ensp;</span><br>" + time.hr + " : "
-                + ((time.min<10)?"0"+time.min:time.min) + " : " + ((time.sec<10)?"0"+time.sec:time.sec) + "";
+            // document.getElementById("timeDisplay").innerHTML = "<span style='font-size:1rem'>current time: &ensp;</span><br>" + time.hr + " : "
+            //     + ((time.min<10)?"0"+time.min:time.min) + " : " + ((time.sec<10)?"0"+time.sec:time.sec) + "";
 
             if (time.hr >= 10 && time.min >= 40 && time.hr <= 12 && time.min <= 45) {
                 document.getElementById("curSchedule").innerHTML = "Brainstorming an Idea Workshop";
