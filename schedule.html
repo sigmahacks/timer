@@ -52,7 +52,7 @@
             <h1 style="color: #f5f5ee; font-size: 4.5vh;" class="text">upcoming events:</h1><br><br>
             <div id="scheduleNow" style="position:relative; line-height:65%; margin-bottom:0.75vh; margin-top:-4vh">
                 <span style="color: #383938; font-size: 3vh; display:block;">currently...</span>
-                <span style="color: #efc045; font-size: 8.75vh; display:block; margin-left: -0.5vh;" id="curSchedule"></span>
+                <span style="color: #efc045; font-size: 8.75vh; display:block; margin-top: 2vh; margin-left: -0.5vh;" id="curSchedule"></span>
             </div>
 
             <div id="timeDisplay" style="line-height:80%;"></div>
@@ -60,8 +60,10 @@
             <div id="scheduleNext">
                 
             </div>
+
+            <a href="index.html" id="link" style="color: #f5f5ee">time until submission →</a>
             <br>
-            <a href="index.html" id="link">time until submission →</a>
+            <a href="https://sigmahacks.org/img/OfficialSchedule.pdf" id="link" style="color: #efc045">full schedule →</a>
         </div>
     </div>
 
@@ -70,7 +72,7 @@
         function getTime() {
 
             // Get todays date and time
-            var date = new Date();
+            var date = new Date(new Date().toLocaleString('en-US', {timeZone: "America/Los_Angeles"}));
 
             var seconds = date.getSeconds();
             var minutes = date.getMinutes();
@@ -84,57 +86,57 @@
 
         function update() {
             var time = getTime();
-            var date = new Date().getDate();
+            var date = new Date(new Date().toLocaleString('en-US', {timeZone: "America/Los_Angeles"}));
             // time.hr -=12;
             // document.getElementById("timeDisplay").innerHTML = "<span style='font-size:1rem'>current time: &ensp;</span><br>" + time.hr + " : "
             //     + ((time.min<10)?"0"+time.min:time.min) + " : " + ((time.sec<10)?"0"+time.sec:time.sec) + "";
-            if (date == 24) {
+            if (date.getDate() == 24) {
                 if (time.hr >= 20 && time.min >= 0 && time.hr <= 20 && time.min <= 30){
                     document.getElementById("curSchedule").innerHTML = "Opening Ceremony";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
-                        "Hacking Prep";
+                        "Next: Hacking Prep";
                 }
                 else if (time.hr >= 20 && time.min >= 30 && time.hr <= 21 && time.min <= 0){
                     document.getElementById("curSchedule").innerHTML = "Hacking Prep";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
-                        "Q&A Session w/ Silicon Valley Software Executives";
+                        "Next: Q&A Session w/ Silicon Valley Software Executives";
                 }
             }
-            else if (date == 25) {
+            else if (date.getDate() == 25) {
                  if (time.hr >= 8 && time.min >= 30 && time.hr <= 9 && time.min <= 0){
                     document.getElementById("curSchedule").innerHTML = "Q&A Session w/ Silicon Valley Software Executives";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
-                        "MLH: Capture the Flag Presented by US Air Force";
+                        "Next: MLH: Capture the Flag Presented by US Air Force";
                 }
                 else if (time.hr >= 11 && time.min >= 0 && time.hr <= 12 && time.min <= 0){
                     document.getElementById("curSchedule").innerHTML = "MLH: Capture the Flag Presented by US Air Force";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
-                        "EchoAR Workshop";
+                        "Next: EchoAR Workshop";
                 }
                 else if (time.hr >= 15 && time.min >= 0 && time.hr <= 15 && time.min <= 30){
                      document.getElementById("curSchedule").innerHTML = "EchoAR Workshop";
                      document.getElementById("scheduleNow").style.fontSize = "5vw";
                      document.getElementById("scheduleNext").innerHTML =
-                         "MLH: Bob Ross MS Paint Challenge";
+                         "Next: MLH: Bob Ross MS Paint Challenge";
                  }
                  else if (time.hr >= 19 && time.min >= 0 && time.hr <= 20 && time.min <= 0){
                      document.getElementById("curSchedule").innerHTML = "MLH: Bob Ross MS Paint Challenge";
                      document.getElementById("scheduleNow").style.fontSize = "5vw";
                      document.getElementById("scheduleNext").innerHTML =
-                         "Project Submission";
+                         "Next: Project Submission";
                  }
                  else if (time.hr >= 20 && time.min >= 45 && time.hr <= 21 && time.min <= 0){
                      document.getElementById("curSchedule").innerHTML = "Project Submission";
                      document.getElementById("scheduleNow").style.fontSize = "5vw";
                      document.getElementById("scheduleNext").innerHTML =
-                         "Closing Ceremony";
+                         "Next: losing Ceremony";
                  }
             }
-            else if (date == 26) {
+            else if (date.getDate() == 26) {
                 if (time.hr >= 12 && time.min >= 0 && time.hr <= 13 && time.min <= 0){
                     document.getElementById("curSchedule").innerHTML = "Closing Ceremony";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
@@ -143,7 +145,7 @@
                 }
             }
             else {
-                document.getElementById("curSchedule").innerHTML = "Thank you for participating!";
+                document.getElementById("curSchedule").innerHTML = "Thank You for Participating!";
                 document.getElementById("scheduleNow").style.fontSize = "5vw";
             }
 
