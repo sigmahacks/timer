@@ -135,17 +135,28 @@
                      document.getElementById("scheduleNext").innerHTML =
                          "Next: Project Submission";
                  }
-                 else if (time.hr >= 20 && time.min >= 45 && time.hr <= 21 && time.min <= 0){
-                     document.getElementById("curSchedule").innerHTML = "Project Submission";
+                 else if (time.hr > 20 && time.min >= 0 && time.hr <= 21 && time.min <= 0){
+                     document.getElementById("curSchedule").innerHTML = "Project Submission due at 9pm PDT";
                      document.getElementById("scheduleNow").style.fontSize = "5vw";
                      document.getElementById("scheduleNext").innerHTML =
                          "Next: Closing Ceremony";
                  }
-                 else if (time.hr < 8) {
+             
+                else if (time.hr < 11) {
                     document.getElementById("curSchedule").innerHTML = "Hacking Period";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
-                        "Next: Q&A Session w/ Silicon Valley Software Executives";
+                        "Next: MLH: Capture the Flag Presented by US Air Force";
+                }    else if (time.hr < 15) {
+                    document.getElementById("curSchedule").innerHTML = "Hacking Period";
+                    document.getElementById("scheduleNow").style.fontSize = "5vw";
+                    document.getElementById("scheduleNext").innerHTML =
+                        "Next: EchoAR Workshop";
+                } else if (time.hr < 19) {
+                    document.getElementById("curSchedule").innerHTML = "Hacking Period";
+                    document.getElementById("scheduleNow").style.fontSize = "5vw";
+                    document.getElementById("scheduleNext").innerHTML =
+                        "Next: MLH: Bob Ross MS Paint Challenge";
                 } else {
                     document.getElementById("curSchedule").innerHTML = "Break :)";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
