@@ -108,7 +108,7 @@
 
     
 // Set the date we're counting down to
-var countDownDate = new Date("2020-07-25T21:00:00-08:00").getTime();
+var countDownDate = new Date("2020-07-25T21:00:00-07:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -129,9 +129,9 @@ var x = setInterval(function() {
   document.getElementById("demo").innerHTML = hours+days*24 + " : "
   + ((minutes<10)?"0"+minutes:minutes) + " : " + ((seconds<10)?"0"+seconds:seconds) + "";
 
-  if (distance > 86400000) {
-      document.getElementById("demo").innerHTML = "hacking has not begun..."
-  }
+//   if (distance > 86400000) {
+//       document.getElementById("demo").innerHTML = "hacking has not begun..."
+//   }
 
   // If the count down is finished, write some text
   if (distance < 0) {
