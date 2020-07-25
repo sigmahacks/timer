@@ -103,9 +103,15 @@
                     document.getElementById("scheduleNext").innerHTML =
                         "Next: Q&A Session w/ Silicon Valley Software Executives";
                 }
+                else {
+                    document.getElementById("curSchedule").innerHTML = "Hacking Period";
+                    document.getElementById("scheduleNow").style.fontSize = "5vw";
+                    document.getElementById("scheduleNext").innerHTML =
+                        "Next: Q&A Session w/ Silicon Valley Software Executives";
+                }
             }
             else if (date.getDate() == 25) {
-                 if (time.hr >= 8 && time.min >= 30 && time.hr <= 9 && time.min <= 0){
+                 if (time.hr >= 8 && time.hr <= 9 && time.min <= 30){
                     document.getElementById("curSchedule").innerHTML = "Q&A Session w/ Silicon Valley Software Executives";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
@@ -133,8 +139,19 @@
                      document.getElementById("curSchedule").innerHTML = "Project Submission";
                      document.getElementById("scheduleNow").style.fontSize = "5vw";
                      document.getElementById("scheduleNext").innerHTML =
-                         "Next: losing Ceremony";
+                         "Next: Closing Ceremony";
                  }
+                 else if (time.hr < 8) {
+                    document.getElementById("curSchedule").innerHTML = "Hacking Period";
+                    document.getElementById("scheduleNow").style.fontSize = "5vw";
+                    document.getElementById("scheduleNext").innerHTML =
+                        "Next: Q&A Session w/ Silicon Valley Software Executives";
+                } else {
+                    document.getElementById("curSchedule").innerHTML = "Break :)";
+                    document.getElementById("scheduleNow").style.fontSize = "5vw";
+                    document.getElementById("scheduleNext").innerHTML =
+                        "Next: Closing Ceremony";
+                }
             }
             else if (date.getDate() == 26) {
                 if (time.hr >= 12 && time.min >= 0 && time.hr <= 13 && time.min <= 0){
@@ -142,7 +159,16 @@
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     // document.getElementById("scheduleNext").innerHTML =
                     //     "MLH: Capture the Flag Presented by US Air Force";
+                } else if (time.hr < 12){
+                document.getElementById("curSchedule").innerHTML = "Break :)";
+                document.getElementById("scheduleNow").style.fontSize = "5vw";
+                document.getElementById("scheduleNext").innerHTML =
+                        "Next: Closing Ceremony";
                 }
+                else {
+                document.getElementById("curSchedule").innerHTML = "Thank You for Participating!";
+                document.getElementById("scheduleNow").style.fontSize = "5vw";
+            }
             }
             else {
                 document.getElementById("curSchedule").innerHTML = "Thank You for Participating!";
