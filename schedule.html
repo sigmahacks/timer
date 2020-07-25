@@ -123,19 +123,19 @@
                     document.getElementById("scheduleNext").innerHTML =
                         "Next: EchoAR Workshop";
                 }
-                else if (time.hr >= 15 && time.min >= 0 && time.hr <= 15 && time.min <= 30){
+                else if (time.hr == 15 && time.min >= 0 && time.min <= 30){
                      document.getElementById("curSchedule").innerHTML = "EchoAR Workshop";
                      document.getElementById("scheduleNow").style.fontSize = "5vw";
                      document.getElementById("scheduleNext").innerHTML =
                          "Next: MLH: Bob Ross MS Paint Challenge";
                  }
-                 else if (time.hr >= 19 && time.min >= 0 && time.hr <= 20 && time.min <= 0){
+                 else if (time.hr >= 19 && time.min >= 0 && time.hr <= 20){
                      document.getElementById("curSchedule").innerHTML = "MLH: Bob Ross MS Paint Challenge";
                      document.getElementById("scheduleNow").style.fontSize = "5vw";
                      document.getElementById("scheduleNext").innerHTML =
                          "Next: Project Submission";
                  }
-                 else if (time.hr > 20 && time.min >= 0 && time.hr <= 21 && time.min <= 0){
+                 else if (time.hr > 20 && time.min >= 0 && time.hr <= 21){
                      document.getElementById("curSchedule").innerHTML = "Project Submission due at 9pm PDT";
                      document.getElementById("scheduleNow").style.fontSize = "5vw";
                      document.getElementById("scheduleNext").innerHTML =
@@ -165,7 +165,7 @@
                 }
             }
             else if (date.getDate() == 26) {
-                if (time.hr >= 12 && time.min >= 0 && time.hr <= 13 && time.min <= 0){
+                if (time.hr >= 12 && time.min >= 0 && time.hr <= 13){
                     document.getElementById("curSchedule").innerHTML = "Closing Ceremony";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     // document.getElementById("scheduleNext").innerHTML =
