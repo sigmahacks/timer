@@ -19,7 +19,7 @@
         }
 
         #screen {
-            background-color: #81a969;
+            background-color: #1b2c49;
         }
 
         #scheduleNow {
@@ -37,10 +37,12 @@
         #link {
             color: rgba(0, 0, 0, 0.48);
             font-size: 20px;
+            opacity: 0.75;
         }
 
         #link:hover {
             color:black;
+            opacity: 1;
         }
 
     </style>
@@ -49,10 +51,10 @@
 
     <div style="width:100vw; height:100vh;" id="screen">
         <div class="container" style="position:relative; top: 50%; transform:translate(0, -50%);">
-            <h1 style="color: #f5f5ee; font-size: 4.5vh;" class="text">upcoming events:</h1><br><br>
-            <div id="scheduleNow" style="position:relative; line-height:65%; margin-bottom:0.75vh; margin-top:-4vh">
-                <span style="color: #383938; font-size: 3vh; display:block;">currently...</span>
-                <span style="color: #efc045; font-size: 8.75vh; display:block; margin-top: 2vh; margin-left: -0.5vh;" id="curSchedule"></span>
+            <h1 style="color: #fff; font-size: 3rem;" class="text">Upcoming Events:</h1><br><br>
+            <div id="scheduleNow" style="position:relative; line-height:65%; margin-bottom:0.55vh; margin-top:-5vh">
+                <span style="color: #83bcd0; font-size: 3vh; display:block;">Currently...</span>
+                <span style="color: #f9ac3d; font-size: 4.5rem; display:block; margin-top: 2vh; margin-left: -0.5vh;" id="curSchedule"></span>
             </div>
 
             <div id="timeDisplay" style="line-height:80%;"></div>
@@ -61,9 +63,9 @@
                 
             </div>
 
-            <a href="index.html" id="link" style="color: #f5f5ee">time until submission →</a>
+            <a href="index.html" id="link" style="color: #f5f5ee; font-size: 3rem;" >Time Until Submission →</a>
             <br>
-            <a href="https://sigmahacks.org/img/OfficialSchedule.pdf" id="link" style="color: #efc045">full schedule →</a>
+            <a href="https://sigmahacks.org/img/OfficialSchedule.pdf" id="link" style="color: #f9ac3d; font-size: 2rem">Full Schedule →</a>
         </div>
     </div>
 
@@ -90,7 +92,7 @@
             // time.hr -=12;
             // document.getElementById("timeDisplay").innerHTML = "<span style='font-size:1rem'>current time: &ensp;</span><br>" + time.hr + " : "
             //     + ((time.min<10)?"0"+time.min:time.min) + " : " + ((time.sec<10)?"0"+time.sec:time.sec) + "";
-            if (date.getDate() == 24) {
+            if (date.getDate() == 25) {
                 if (time.hr >= 20 && time.min >= 0 && time.hr <= 20 && time.min <= 30){
                     document.getElementById("curSchedule").innerHTML = "Opening Ceremony";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
@@ -110,7 +112,7 @@
                         "Next: Q&A Session w/ Silicon Valley Software Executives";
                 }
             }
-            else if (date.getDate() == 25) {
+            else if (date.getDate() == 26) {
                  if (time.hr >= 8 && time.hr <= 9 && time.min <= 30){
                     document.getElementById("curSchedule").innerHTML = "Q&A Session w/ Silicon Valley Software Executives";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
@@ -129,13 +131,13 @@
                      document.getElementById("scheduleNext").innerHTML =
                          "Next: MLH: Bob Ross MS Paint Challenge";
                  }
-                 else if (time.hr >= 19 && time.min >= 0 && time.hr <= 20){
+                 else if (time.hr >= 18 && time.min >= 0 && time.hr <= 19){
                      document.getElementById("curSchedule").innerHTML = "MLH: Bob Ross MS Paint Challenge";
                      document.getElementById("scheduleNow").style.fontSize = "5vw";
                      document.getElementById("scheduleNext").innerHTML =
                          "Next: Project Submission";
                  }
-                 else if (time.hr > 20 && time.min >= 0 && time.hr <= 21){
+                 else if (time.hr > 19 && time.min >= 0 && time.hr <= 21){
                      document.getElementById("curSchedule").innerHTML = "Project Submission due at 9pm PDT";
                      document.getElementById("scheduleNow").style.fontSize = "5vw";
                      document.getElementById("scheduleNext").innerHTML =
@@ -152,7 +154,7 @@
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
                         "Next: EchoAR Workshop";
-                } else if (time.hr < 19) {
+                } else if (time.hr < 18) {
                     document.getElementById("curSchedule").innerHTML = "Hacking Period";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
@@ -164,7 +166,7 @@
                         "Next: Closing Ceremony";
                 }
             }
-            else if (date.getDate() == 26) {
+            else if (date.getDate() == 27) {
                 if (time.hr >= 12 && time.min >= 0 && time.hr <= 13){
                     document.getElementById("curSchedule").innerHTML = "Closing Ceremony";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";

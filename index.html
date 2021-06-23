@@ -42,7 +42,7 @@
         #link {
             position:relative;
             color:black;
-            opacity: 0.6;
+            opacity: 0.75;
             font-size: 15px;
         }
 
@@ -57,13 +57,13 @@
 
   <!-- Display the countdown timer in an element -->
     <div style="width:100vw; height:100vh;" id="screen">
-        <div class="container" style="position:relative; top: 40%; transform:translate(0, -50%); ">
-            <h1 style="padding-top: 2vh; padding-bottom: 1vh; font-size: 3rem; color: #f5f5ee" class="text">time until submission:</h1>
-            <h1 style="padding-bottom: -1vh; padding-top: -1vh; font-size: 4.5rem; color: #efc045" id="demo" class="text"></h1>     
+        <div class="container" style="position:relative; top: 50%; transform:translate(0, -50%); ">
+            <h1 style="padding-top: 2vh; padding-bottom: 1vh; font-size: 3rem; color: #fff" class="text">Time Until Submission:</h1>
+            <h1 style="padding-bottom: -1vh; padding-top: -1vh; font-size: 4.5rem; color: #f9ac3d" id="demo" class="text"></h1>     
             <div class="text" style="padding-top: -2vh; padding-bottom: -2vh">
-                 <a style="font-size: 3rem; color: #f5f5ee" href="schedule.html" id="link" class="text">upcoming events →</a>
+                 <a style="font-size: 3rem; color: #83bcd0" href="schedule.html" id="link" class="text">Upcoming Events →</a>
                  <br>
-                 <a style="font-size: 2rem; color: #383938" href="https://sigmahacks.org/img/SigmaHacksOfficialSchedule.pdf" id="link" class="text">full schedule →</a>
+                 <a style="font-size: 2rem; color: #fff" href="https://sigmahacks.org/img/SigmaHacksOfficialSchedule.pdf" id="link" class="text">Full Schedule →</a>
             </div>
         </div>
             
@@ -104,7 +104,7 @@
         }
     }
     
-    document.getElementById('screen').style.backgroundColor = '#81a969';
+    document.getElementById('screen').style.backgroundColor = '#1b2c49';
 
     
 // Set the date we're counting down to
@@ -136,7 +136,7 @@ var x = setInterval(function() {
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "submissions closed!";
+    document.getElementById("demo").innerHTML = "Submissions Closed!";
   }
 }, 1000);
     
