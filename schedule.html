@@ -119,7 +119,7 @@
                     document.getElementById("curSchedule").innerHTML = "Hacking Period";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
-                        "Next: Q&A Session w/ Silicon Valley Software Executives";
+                        "Next: EchoAR Workshop";
                 }
                 // before 8 PM: event has not started yet
                 else {
@@ -130,27 +130,20 @@
                 }
             }
             else if (date.getDate() == 26) {
-                // between 8 and 9:30 AM: q&a session, next is MLH ctf event
-                 if (time.hr >= 8 && time.hr <= 9 && time.min <= 30){
-                    document.getElementById("curSchedule").innerHTML = "Q&A Session w/ Silicon Valley Software Executives";
+                // between 7 and 7:30 AM: EchoAR Workshop, next is MLH ctf event
+                 if (time.hr >= 7 && time.hr <= 7 && time.min <= 30){
+                    document.getElementById("curSchedule").innerHTML = "EchoAR Workshop";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
                         "Next: MLH: Capture the Flag Presented by US Air Force";
                 }
-                // between 11 AM and 12 PM: MLH ctf event, next is EchoAR workshop
+                // between 11 AM and 12 PM: MLH ctf event, next is MLH Bob Ross workshop
                 else if (time.hr >= 11 && time.min >= 0 && time.hr <= 12){
                     document.getElementById("curSchedule").innerHTML = "MLH: Capture the Flag Presented by US Air Force";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
-                        "Next: EchoAR Workshop";
+                        "Next: MLH: Bob Ross MS Paint Challenge";
                 }
-                // between 3 and 3:30 PM: echoAR workshop, next is mlh bob ross event
-                else if (time.hr == 15 && time.min >= 0 && time.min <= 30){
-                     document.getElementById("curSchedule").innerHTML = "EchoAR Workshop";
-                     document.getElementById("scheduleNow").style.fontSize = "5vw";
-                     document.getElementById("scheduleNext").innerHTML =
-                         "Next: MLH: Bob Ross MS Paint Challenge";
-                 }
                  // between 6 and 7 PM: mlh bob ross event, next is project submission
                  else if (time.hr >= 18 && time.min >= 0 && time.hr <= 19){
                      document.getElementById("curSchedule").innerHTML = "MLH: Bob Ross MS Paint Challenge";
