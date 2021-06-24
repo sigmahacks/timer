@@ -27,6 +27,7 @@
         }
 
         #scheduleNext {
+            color: #83bcd0;
             font-size: 3vh;
         }
 
@@ -92,7 +93,7 @@
             // time.hr -=12;
             // document.getElementById("timeDisplay").innerHTML = "<span style='font-size:1rem'>current time: &ensp;</span><br>" + time.hr + " : "
             //     + ((time.min<10)?"0"+time.min:time.min) + " : " + ((time.sec<10)?"0"+time.sec:time.sec) + "";
-            if (date.getDate() == 25) {
+            if (date.getDate() == 23) {
                 if (time.hr >= 20 && time.min >= 0 && time.hr <= 20 && time.min <= 30){
                     document.getElementById("curSchedule").innerHTML = "Opening Ceremony";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
@@ -105,14 +106,20 @@
                     document.getElementById("scheduleNext").innerHTML =
                         "Next: Q&A Session w/ Silicon Valley Software Executives";
                 }
-                else {
+                else if (time.hr >= 21){
                     document.getElementById("curSchedule").innerHTML = "Hacking Period";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
                         "Next: Q&A Session w/ Silicon Valley Software Executives";
                 }
+                else {
+                    document.getElementById("curSchedule").innerHTML = "SigmaHacks Has Not Started Yet!";
+                    document.getElementById("scheduleNow").style.fontSize = "5vw";
+                    document.getElementById("scheduleNext").innerHTML =
+                        "Next: Opening Ceremony";
+                }
             }
-            else if (date.getDate() == 26) {
+            else if (date.getDate() == 24) {
                  if (time.hr >= 8 && time.hr <= 9 && time.min <= 30){
                     document.getElementById("curSchedule").innerHTML = "Q&A Session w/ Silicon Valley Software Executives";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
@@ -166,7 +173,7 @@
                         "Next: Closing Ceremony";
                 }
             }
-            else if (date.getDate() == 27) {
+            else if (date.getDate() == 25) {
                 if (time.hr >= 12 && time.min >= 0 && time.hr <= 13){
                     document.getElementById("curSchedule").innerHTML = "Closing Ceremony";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
