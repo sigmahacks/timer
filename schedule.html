@@ -93,25 +93,35 @@
             // time.hr -=12;
             // document.getElementById("timeDisplay").innerHTML = "<span style='font-size:1rem'>current time: &ensp;</span><br>" + time.hr + " : "
             //     + ((time.min<10)?"0"+time.min:time.min) + " : " + ((time.sec<10)?"0"+time.sec:time.sec) + "";
-            if (date.getDate() == 23) {
+            if (date.getDate() < 25 && date.getMonth() == 5 && date.getFullYear() == 2021) {
+                document.getElementById("curSchedule").innerHTML = "SigmaHacks Has Not Started Yet!";
+                document.getElementById("scheduleNow").style.fontSize = "5vw";
+                document.getElementById("scheduleNext").innerHTML =
+                        "Next: Opening Ceremony";
+            }    
+            else if (date.getDate() == 25) {
+                // between 8 and 8:30 PM: opening ceremony ongoing, hacking prep next
                 if (time.hr >= 20 && time.min >= 0 && time.hr <= 20 && time.min <= 30){
                     document.getElementById("curSchedule").innerHTML = "Opening Ceremony";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
                         "Next: Hacking Prep";
                 }
+                // between 8:30 and 9 PM: hacking prep, hacking period starts soon
                 else if (time.hr >= 20 && time.min >= 30 && time.hr <= 21 && time.min <= 0){
                     document.getElementById("curSchedule").innerHTML = "Hacking Prep";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
-                        "Next: Q&A Session w/ Silicon Valley Software Executives";
+                        "Next: Hacking Period Starts";
                 }
+                // after 9 PM: hacking period is ongoing, next event is q&a session
                 else if (time.hr >= 21){
                     document.getElementById("curSchedule").innerHTML = "Hacking Period";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
                         "Next: Q&A Session w/ Silicon Valley Software Executives";
                 }
+                // before 8 PM: event has not started yet
                 else {
                     document.getElementById("curSchedule").innerHTML = "SigmaHacks Has Not Started Yet!";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
@@ -119,124 +129,95 @@
                         "Next: Opening Ceremony";
                 }
             }
-            else if (date.getDate() == 24) {
+            else if (date.getDate() == 26) {
+                // between 8 and 9:30 AM: q&a session, next is MLH ctf event
                  if (time.hr >= 8 && time.hr <= 9 && time.min <= 30){
                     document.getElementById("curSchedule").innerHTML = "Q&A Session w/ Silicon Valley Software Executives";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
                         "Next: MLH: Capture the Flag Presented by US Air Force";
                 }
+                // between 11 AM and 12 PM: MLH ctf event, next is EchoAR workshop
                 else if (time.hr >= 11 && time.min >= 0 && time.hr <= 12){
                     document.getElementById("curSchedule").innerHTML = "MLH: Capture the Flag Presented by US Air Force";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
                         "Next: EchoAR Workshop";
                 }
+                // between 3 and 3:30 PM: echoAR workshop, next is mlh bob ross event
                 else if (time.hr == 15 && time.min >= 0 && time.min <= 30){
                      document.getElementById("curSchedule").innerHTML = "EchoAR Workshop";
                      document.getElementById("scheduleNow").style.fontSize = "5vw";
                      document.getElementById("scheduleNext").innerHTML =
                          "Next: MLH: Bob Ross MS Paint Challenge";
                  }
+                 // between 6 and 7 PM: mlh bob ross event, next is project submission
                  else if (time.hr >= 18 && time.min >= 0 && time.hr <= 19){
                      document.getElementById("curSchedule").innerHTML = "MLH: Bob Ross MS Paint Challenge";
                      document.getElementById("scheduleNow").style.fontSize = "5vw";
                      document.getElementById("scheduleNext").innerHTML =
                          "Next: Project Submission";
                  }
+                 // between 7 and 9 PM: reminder of project submission, next is closing ceremony
                  else if (time.hr > 19 && time.min >= 0 && time.hr <= 21){
                      document.getElementById("curSchedule").innerHTML = "Project Submission due at 9pm PDT";
                      document.getElementById("scheduleNow").style.fontSize = "5vw";
                      document.getElementById("scheduleNext").innerHTML =
                          "Next: Closing Ceremony";
                  }
-             
+                // before 11 AM: hacking period ongoing, next is mlh ctf event
                 else if (time.hr < 11) {
                     document.getElementById("curSchedule").innerHTML = "Hacking Period";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
                         "Next: MLH: Capture the Flag Presented by US Air Force";
-                }    else if (time.hr < 15) {
+                }    
+                // before 3 PM: hacking period ongoing, next is echoAR workshop
+                else if (time.hr < 15) {
                     document.getElementById("curSchedule").innerHTML = "Hacking Period";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
                         "Next: EchoAR Workshop";
-                } else if (time.hr < 18) {
+                } 
+                // before 6 PM: hacking period ongoing, next is mlh bob ross event
+                else if (time.hr < 18) {
                     document.getElementById("curSchedule").innerHTML = "Hacking Period";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
                         "Next: MLH: Bob Ross MS Paint Challenge";
-                } else {
+                }
+                // after 9 PM: break, next is closing ceremony 
+                else {
                     document.getElementById("curSchedule").innerHTML = "Break :)";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
                     document.getElementById("scheduleNext").innerHTML =
                         "Next: Closing Ceremony";
                 }
             }
-            else if (date.getDate() == 25) {
+            else if (date.getDate() == 27) {
+                // between 12 and 1 PM: closing ceremony
                 if (time.hr >= 12 && time.min >= 0 && time.hr <= 13){
                     document.getElementById("curSchedule").innerHTML = "Closing Ceremony";
                     document.getElementById("scheduleNow").style.fontSize = "5vw";
-                    // document.getElementById("scheduleNext").innerHTML =
-                    //     "MLH: Capture the Flag Presented by US Air Force";
-                } else if (time.hr < 12){
+                }
+                // before 12 PM: break, next is closing ceremony 
+                else if (time.hr < 12){
                 document.getElementById("curSchedule").innerHTML = "Break :)";
                 document.getElementById("scheduleNow").style.fontSize = "5vw";
                 document.getElementById("scheduleNext").innerHTML =
                         "Next: Closing Ceremony";
                 }
+                // after the event: thank you for participating
                 else {
                 document.getElementById("curSchedule").innerHTML = "Thank You for Participating!";
                 document.getElementById("scheduleNow").style.fontSize = "5vw";
             }
             }
+            // days after the event: thank you for participating
             else {
                 document.getElementById("curSchedule").innerHTML = "Thank You for Participating!";
                 document.getElementById("scheduleNow").style.fontSize = "5vw";
             }
-
-
-            // if (time.hr >= 10 && time.min >= 40 && time.hr <= 12 && time.min <= 45) {
-            //     document.getElementById("curSchedule").innerHTML = "Brainstorming an Idea Workshop";
-            //     document.getElementById("scheduleNow").style.fontSize = "5vw";
-            //     document.getElementById("scheduleNext").innerHTML =
-            //         "Lunch @ 12:45 PM";
-            // } else if (time.hr >= 12 && time.min >= 45 && time.hr<= 13 && time.min <=59) {
-            //     document.getElementById("curSchedule").innerHTML = "Lunch";
-            //     document.getElementById("scheduleNow").style.fontSize = "6vw";
-            //     document.getElementById("scheduleNext").innerHTML =
-            //         "App Development Workshop @ 2:00 PM";
-            // } else if (time.hr >= 14 && time.min >= 0 && time.hr<= 16 && time.min <=59) {
-            //     document.getElementById("curSchedule").innerHTML = "App Development Workshop";
-            //     document.getElementById("scheduleNow").style.fontSize = "5vw";
-            //     document.getElementById("scheduleNext").innerHTML =
-            //         "Boba @ 5:00 PM";
-            // } else if (time.hr >= 17 && time.hr<= 17 && time.min <=59) {
-            //     document.getElementById("curSchedule").innerHTML = "Boba";
-            //     document.getElementById("scheduleNow").style.fontSize = "7vw";
-            //     document.getElementById("scheduleNext").innerHTML =
-            //         "Machine Learning Workshop @ 6:00 PM";
-            // } else if (time.hr >= 18 && time.hr<= 19 && time.min <=45) {
-            //     document.getElementById("curSchedule").innerHTML = "Machine Learning Workshop";
-            //     document.getElementById("scheduleNow").style.fontSize = "5vw";
-            //     document.getElementById("scheduleNext").innerHTML =
-            //         "Dinner @ 7:45 PM";
-            // } else if (time.hr >= 19 && time.min >= 45 && time.hr<= 21) {
-            //     document.getElementById("curSchedule").innerHTML = "Dinner";
-            //     document.getElementById("scheduleNow").style.fontSize = "6vw";
-            //     document.getElementById("scheduleNext").innerHTML =
-            //         "Building a STEM Career Workshop @ 7:00 AM";
-            // } else if (time.hr >= 7 && time.min >= 0 && time.hr<= 7 && time.min <=59) {
-            //     document.getElementById("curSchedule").innerHTML = "Building a STEM Career Workshop";
-            //     document.getElementById("scheduleNow").style.fontSize = "5vw";
-            //     document.getElementById("scheduleNext").innerHTML =
-            //         "Breakfast @ 8:00 AM";
-            // } else if (time.hr >= 8 && time.min >= 0 && time.hr<= 8 && time.min <=59) {
-            //     document.getElementById("curSchedule").innerHTML = "Breakfast";
-            //     document.getElementById("scheduleNow").style.fontSize = "6vw";
-            //     document.getElementById("scheduleNext").innerHTML =
-            //         "Project Submissions @ 9:00 AM";
-            // }
         }
 
         setInterval(update, 1000);
